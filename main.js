@@ -1,4 +1,9 @@
 //Tip Calculation
+function calcTipEvent(e) {
+  e.preventDefault();
+  calcTip();
+  return false;
+}
 function calcTip() {
     var totalBill = document.getElementById("totalbill").value;
     var tipAmount = document.getElementById("tipamount").value;
@@ -6,9 +11,13 @@ function calcTip() {
 
 
 //Verifying input
-if (totalBill ==="" || tipAmount === "0") {
-    alert("Please enter your amount");
+if (totalBill ==="" ) {
+    alert("Please enter your bill amount");
     return;
+}
+if (tipAmount === "0" ) {
+  alert("Please specify how the service was.");
+  return;
 }
 //If the bill is not being split 
 if ( peopleSplit === " " || peopleSplit <= 1){
